@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>1 срок тюрьмы</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ЖМИ НА РЫЧАГ КРОНГ!</h1>
+    <textarea id="textArea" rows="4" cols="50" placeholder="пиши"></textarea>
+    <button id="showTextButton">тыкай засранец</button>
+    <h2 id="output"></h2>
+    
+
+    <script>
+        document.getElementById("showTextButton").onclick = function() {
+            var text = document.getElementById("textArea").value;
+            document.getElementById("output").innerText = 'поздравляем,'+text;
+        };
+    </script>
+</body>
+</html>
