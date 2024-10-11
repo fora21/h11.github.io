@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>КАЛЬКУЛЯТОР</title>
+    <link href="css/s1.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1>КАЛЬКУЛЯТОР</h1>
+<div class="container">
+    <div id="calculator">
+        <input type="text" id="display" disabled>
+        <br>
+        <button onclick="addToDisplay('7')">7</button>
+        <button onclick="addToDisplay('8')">8</button>
+        <button onclick="addToDisplay('9')">9</button>
+        <button onclick="addToDisplay('+')">+</button>
+        <br>
+        <button onclick="addToDisplay('4')">4</button>
+        <button onclick="addToDisplay('5')">5</button>
+        <button onclick="addToDisplay('6')">6</button>
+        <button onclick="addToDisplay('-')">-</button>
+        <br>
+        <button onclick="addToDisplay('1')">1</button>
+        <button onclick="addToDisplay('2')">2</button>
+        <button onclick="addToDisplay('3')">3</button>
+        <button onclick="addToDisplay('*')">*</button>
+        <br>
+        <button onclick="addToDisplay('0')">0</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="addToDisplay('/')">/</button>
+    </div>
+</div>
+
+    <script>
+        // Эта функция используется для добавления конкретного "value" (значения) на дисплей.
+  function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+        // Эта функция очищает дисплей, устанавливая его значение в пустую строку.
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+        // Эта функция вычисляет результат выражения на дисплее с помощью функции 'eval'.
+        // Она обрабатывает ошибки и выводит сообщение 'Error', если выражение недопустимо.
+        function calculateResult() {
+            try {
+       // Получение результата выражения и вывод результата на дисплей.
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+       // Если в процессе вычисления возникла ошибка, на дисплее отобразится сообщение 'Error'.
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

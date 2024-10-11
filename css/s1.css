@@ -1,0 +1,41 @@
+ body{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+ }
+ 
+ #calculator {
+            width: 300px;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+       #calculator button {
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #display {
+            display: grid;
+            grid-template-rows: 50px 1fr 50px;
+            font-size: 24px; /* Настройте размер шрифта в соответствии с вашими предпочтениями */
+            margin: 10px auto;
+        }
+    #container{
+        padding: 50px;
+	text-align: center;
+    }
+    h1{
+        margin: 0%;
+        background-position: center;
+    }
+        
