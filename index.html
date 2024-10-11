@@ -1,16 +1,43 @@
 <!DOCTYPE html>
+
 <head>
-<title>ПОМОГИТЕ ПРОШУ</title>
+    <title>ПОМОГИТЕ ПРОШУ</title>
 </head>
+
 <body>
     <h1>HELP</h1>
+
+    <input type="text" name="message" placeholder="введите сообщение" id="f44" />
+    <!-- <input type="submit" value="отправить" /> -->
+    <button id="button">
+        ЖМИ НА РЫЧАГ КРОНГ!
+    </button>
+
+
     <script>
-        console.log(document);
+
+     let h1text = document.querySelector('h1');
+        let button = document.getElementById('button');
+        button.addEventListener('click', () => {
+            console.log('click');
+            h1text.innerHTML += 1;
+            document.querySelector('h1').innerHTML = document.getElementById('f44').value;
+        });
+
+        /* console.log(document);*/
+
+
+        /*console.log(h1text);
+        h1text.innerHTML='а что вы делаете в оем холодильнике?';*/
+
+
     </script>
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </body>
+
 </html>
