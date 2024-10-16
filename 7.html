@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Получить заголовок сайта</title>
+</head>
+<body>
+    <h1>Введите URL для получения заголовка сайта</h1>
+    <input type="text" id="url" placeholder="Введите URL" />
+    <button id="fetchTitle">Получить заголовок</button>
+    <h2 id="result"></h2>
+
+    <script>
+        document.getElementById('fetchTitle').onclick = async function() {
+            const url = document.getElementById('url').value;
+            const response = await fetch('http://localhost:3000/fetch-title', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ url: url })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                document.getElementById('result').innerText = 'Заголовок: ' + data.title;
+            } else {
+                document.getElementById('result').innerText = 'Ошибка: не удалось получить заголовок';
+            }
+        };
+    </script>
+    <script src="server.js"></script>
+</body>
+</html>
